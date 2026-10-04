@@ -1,0 +1,32 @@
+---
+const navItems = [
+  { label:"Home", href:"/" },
+  { label:"About", href:"/about/" },
+  { label:"Services", href:"/services/" },
+  { label:"Service Areas", href:"/service-areas/" },
+  { label:"Blog", href:"/blog/" },
+  { label:"Contact", href:"/contact/" },
+];
+---
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home"><span class="brand-mark">AC</span><span><strong>MAHARASHTRA</strong><small>AC SERVICE & REPAIR</small></span></a>
+<nav aria-label="Primary navigation">{navItems.map((item)=><a href={item.href}>{item.label}</a>)}</nav>
+<a class="header-call" href="tel:+919021803472">Call Now</a>
+<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+</div>
+</header>
+<style>
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.header-inner{min-height:78px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;color:var(--navy)}
+.brand strong{display:block;font-size:1rem;line-height:1;letter-spacing:.04em}
+.brand small{display:block;color:var(--orange);font-size:.58rem;font-weight:800;margin-top:4px;letter-spacing:.04em}
+.brand-mark{width:38px;height:38px;display:grid;place-items:center;border:3px solid var(--orange);border-radius:50%;color:var(--navy);font-size:.7rem;font-weight:900}
+nav{display:flex;align-items:center;gap:22px}
+nav a{font-size:.9rem;font-weight:700;color:var(--text)}
+nav a:hover{color:var(--orange)}
+.header-call{padding:11px 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:.9rem}
+.menu-toggle{display:none;border:0;background:none;font-size:1.5rem;color:var(--navy)}
+@media(max-width:900px){nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
+</style>
