@@ -1,18 +1,16 @@
 ---
 import "../styles/global.css";
-interface Props { title:string; description?:string; canonical?:string; }
-const { title, description="Professional AC service and repair across Pune and Mumbai.", canonical } = Astro.props;
-const canonicalUrl = canonical ?? Astro.url.href;
+interface Props { title:string; description?:string; canonical?:string; image?:string; }
+const { title, description="Professional AC service and repair across Pune and Mumbai.", canonical, image="/og-default.svg" } = Astro.props;
+const canonicalUrl=canonical??Astro.url.href;
+const absoluteImage=new URL(image, Astro.site??Astro.url).href;
 ---
-<!doctype html>
-<html lang="en-IN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<meta name="description" content={description} />
-<link rel="canonical" href={canonicalUrl} />
-<meta name="theme-color" content="#0b2e63" />
-<title>{title}</title>
-</head>
-<body><slot /></body>
-</html>
+<!doctype html><html lang="en-IN"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+<meta name="description" content={description} /><link rel="canonical" href={canonicalUrl} />
+<meta name="theme-color" content="#0b2e63" /><meta property="og:type" content="website" />
+<meta property="og:title" content={title} /><meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} /><meta property="og:image" content={absoluteImage} />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} />
+<title>{title}</title></head><body><slot /></body></html>
