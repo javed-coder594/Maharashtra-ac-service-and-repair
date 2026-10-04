@@ -1,0 +1,12 @@
+---
+interface Props { title?:string; text?:string; }
+const { title="Need AC Service or Repair?", text="Book professional AC support for your home or business." } = Astro.props;
+---
+<section class="cta"><div class="container cta-inner"><div><span class="eyebrow">Fast AC Support</span><h2>{title}</h2><p>{text}</p></div><div class="actions"><a class="btn btn--primary" href="tel:+919021803472">Call Now</a><a class="btn btn--secondary" href="/contact/">Book Service</a></div></div></section>
+<style>
+.cta{padding:72px 0;background:linear-gradient(135deg,var(--navy-dark),var(--navy))}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta h2{color:#fff;margin-top:10px}.cta p{color:#c6d3e4;max-width:620px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:700px){.cta-inner{flex-direction:column;align-items:flex-start}}
+</style>
