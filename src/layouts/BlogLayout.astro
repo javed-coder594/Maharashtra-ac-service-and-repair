@@ -1,0 +1,22 @@
+---
+import MainLayout from "./MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+const { title, description } = Astro.props;
+---
+<MainLayout title={title} description={description}>
+<Header />
+<main><article class="article"><div class="container article-container"><a class="back" href="/blog/">← Back to Blog</a><slot /></div></article></main>
+<CTA title="Need AC Service?" text="If your AC needs service or repair, contact our team for assistance." />
+<Footer />
+</MainLayout>
+<style>
+.article{padding:70px 0}.article-container{max-width:900px}.back{display:inline-block;color:var(--orange);font-weight:800;margin-bottom:30px}
+.article-container :global(.post-meta){color:var(--muted);font-size:.9rem;margin-bottom:25px}
+.article-container :global(.post-content){font-size:1.05rem}
+.article-container :global(.post-content h2){margin-top:42px}.article-container :global(.post-content h3){margin-top:30px}
+.article-container :global(.post-content a){color:var(--orange-dark);font-weight:700}
+.article-container :global(.post-content img){border-radius:18px;margin:28px 0}
+.article-container :global(blockquote){border-left:4px solid var(--orange);margin:28px 0;padding:10px 20px;background:var(--surface)}
+</style>
