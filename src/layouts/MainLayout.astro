@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+interface Props { title:string; description?:string; canonical?:string; }
+const { title, description="Professional AC service and repair across Pune and Mumbai.", canonical } = Astro.props;
+const canonicalUrl = canonical ?? Astro.url.href;
+---
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta name="theme-color" content="#0b2e63" />
+<title>{title}</title>
+</head>
+<body><slot /></body>
+</html>
