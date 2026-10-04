@@ -1,0 +1,22 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+const posts = import.meta.glob("../../content/blog/*.md", { eager:true });
+export function getStaticPaths() {
+  return Object.entries(posts).map(([path, module]:any) => {
+    const slug = path.split("/").pop().replace(".md","");
+    return { params:{ slug }, props:{ post:module } };
+  });
+}
+const { post } = Astro.props;
+const Content = post.default;
+const meta = post.frontmatter;
+---
+<BlogLayout title={meta.title} description={meta.description}>
+<header><span class="eyebrow">{meta.category}</span><h1>{meta.title}</h1><p class="post-meta">Published {meta.date} · {meta.author}</p></header>
+<div class="post-content"><Content /></div>
+</BlogLayout>
+<style>
+header :global(h1){margin-top:12px;max-width:850px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
+</style>
