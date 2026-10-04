@@ -6,8 +6,18 @@ const posts = Object.values(import.meta.glob("../../content/blog/*.md", { eager:
 ---
 <MainLayout title="AC Service Blog | Maharashtra AC Service & Repair" description="AC service, maintenance and air conditioner tips for customers in Pune and Mumbai.">
 <Header />
-<main><section class="page-hero"><div class="container"><span class="eyebrow">Our Blog</span><h1>AC tips, maintenance guides & service advice.</h1><p>Helpful articles for better AC performance, maintenance and repair decisions.</p></div></section>
-<section class="section"><div class="container posts">{posts.map((post:any)=><article class="card post"><span>{post.category}</span><h2>{post.title}</h2><p>{post.description}</p><a href={post.slug ? "/blog/"+post.slug+"/" : "#"}>Read article →</a></article>)}</div></section></main>
+<main>
+<section class="page-hero"><div class="container"><span class="eyebrow">Our Blog</span><h1>AC tips, maintenance guides & service advice.</h1><p>Useful, easy-to-understand articles for better AC performance, maintenance and repair decisions.</p></div></section>
+<section class="section"><div class="container posts">
+{posts.map((post:any)=><article class="card post">
+  {post.image && <img src={post.image} alt={post.title} width="1200" height="700" loading="lazy" decoding="async" />}
+  <div class="post-body"><span>{post.category}</span><h2>{post.title}</h2><p>{post.description}</p><a href={post.slug ? "/blog/"+post.slug+"/" : "#"}>Read article <b>→</b></a></div>
+</article>)}
+</div></section>
+</main>
 <Footer />
 </MainLayout>
-<style>.page-hero{padding:100px 0;background:linear-gradient(135deg,#f7f9fc,#eaf5ff)}.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.post{padding:28px}.post>span{color:var(--orange);font-size:.78rem;font-weight:800;text-transform:uppercase}.post a{color:var(--orange-dark);font-weight:800}@media(max-width:850px){.posts{grid-template-columns:1fr 1fr}}@media(max-width:550px){.posts{grid-template-columns:1fr}}</style>
+<style>
+.page-hero{padding:100px 0;background:radial-gradient(circle at 80% 20%,#eaf5ff,transparent 35%),linear-gradient(135deg,#f7f9fc,#fff)}.page-hero p{max-width:680px;font-size:1.05rem}.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.post{overflow:hidden}.post img{width:100%;aspect-ratio:12/7;object-fit:cover}.post-body{padding:24px}.post>div>span{color:var(--orange);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.post h2{font-size:1.45rem;margin-top:8px}.post a{color:var(--orange-dark);font-weight:800}.post b{display:inline-block;transition:transform .25s ease}.post:hover b{transform:translateX(5px)}
+@media(max-width:850px){.posts{grid-template-columns:1fr 1fr}}@media(max-width:550px){.posts{grid-template-columns:1fr}}
+</style>
