@@ -1,0 +1,13 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+const posts = Object.values(import.meta.glob("../../content/blog/*.md", { eager:true, import:"frontmatter" }));
+---
+<MainLayout title="AC Service Blog | Maharashtra AC Service & Repair" description="AC service, maintenance and air conditioner tips for customers in Pune and Mumbai.">
+<Header />
+<main><section class="page-hero"><div class="container"><span class="eyebrow">Our Blog</span><h1>AC tips, maintenance guides & service advice.</h1><p>Helpful articles for better AC performance, maintenance and repair decisions.</p></div></section>
+<section class="section"><div class="container posts">{posts.map((post:any)=><article class="card post"><span>{post.category}</span><h2>{post.title}</h2><p>{post.description}</p><a href={post.slug ? "/blog/"+post.slug+"/" : "#"}>Read article →</a></article>)}</div></section></main>
+<Footer />
+</MainLayout>
+<style>.page-hero{padding:100px 0;background:linear-gradient(135deg,#f7f9fc,#eaf5ff)}.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.post{padding:28px}.post>span{color:var(--orange);font-size:.78rem;font-weight:800;text-transform:uppercase}.post a{color:var(--orange-dark);font-weight:800}@media(max-width:850px){.posts{grid-template-columns:1fr 1fr}}@media(max-width:550px){.posts{grid-template-columns:1fr}}</style>
