@@ -1,32 +1,38 @@
 ---
 const navItems = [
-  { label:"Home", href:"/" },
-  { label:"About", href:"/about/" },
-  { label:"Services", href:"/services/" },
-  { label:"Service Areas", href:"/service-areas/" },
-  { label:"Blog", href:"/blog/" },
-  { label:"Contact", href:"/contact/" },
+  { label:"Home", href:"/" }, { label:"About", href:"/about/" }, { label:"Services", href:"/services/" },
+  { label:"Service Areas", href:"/service-areas/" }, { label:"Blog", href:"/blog/" }, { label:"Contact", href:"/contact/" },
 ];
 ---
 <header class="site-header">
-<div class="container header-inner">
-<a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home"><span class="brand-mark">AC</span><span><strong>MAHARASHTRA</strong><small>AC SERVICE & REPAIR</small></span></a>
-<nav aria-label="Primary navigation">{navItems.map((item)=><a href={item.href}>{item.label}</a>)}</nav>
-<a class="header-call" href="tel:+919021803472">Call Now</a>
-<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-</div>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home">
+      <span class="brand-mark" aria-hidden="true"><span>AC</span></span>
+      <span class="brand-copy"><strong>MAHARASHTRA</strong><small>AC SERVICE & REPAIR</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">{navItems.map((item)=><a href={item.href}>{item.label}</a>)}</nav>
+    <a class="header-call" href="tel:+919021803472">Call Now</a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-nav" data-mobile-nav><div class="container mobile-nav-inner">
+    {navItems.map((item)=><a href={item.href}>{item.label}</a>)}
+    <a class="mobile-call" href="tel:+919021803472">Call Now</a>
+  </div></div>
 </header>
+<script>
+const button=document.querySelector(".menu-toggle"); const menu=document.querySelector("[data-mobile-nav]");
+button?.addEventListener("click",()=>{const open=menu?.classList.toggle("is-open")??false;button.setAttribute("aria-expanded",String(open));button.setAttribute("aria-label",open?"Close navigation":"Open navigation");});
+</script>
 <style>
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
-.header-inner{min-height:78px;display:flex;align-items:center;gap:24px}
-.brand{display:flex;align-items:center;gap:10px;margin-right:auto;color:var(--navy)}
-.brand strong{display:block;font-size:1rem;line-height:1;letter-spacing:.04em}
-.brand small{display:block;color:var(--orange);font-size:.58rem;font-weight:800;margin-top:4px;letter-spacing:.04em}
-.brand-mark{width:38px;height:38px;display:grid;place-items:center;border:3px solid var(--orange);border-radius:50%;color:var(--navy);font-size:.7rem;font-weight:900}
-nav{display:flex;align-items:center;gap:22px}
-nav a{font-size:.9rem;font-weight:700;color:var(--text)}
-nav a:hover{color:var(--orange)}
-.header-call{padding:11px 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:.9rem}
-.menu-toggle{display:none;border:0;background:none;font-size:1.5rem;color:var(--navy)}
-@media(max-width:900px){nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+.header-inner{min-height:82px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:11px;margin-right:auto;color:var(--navy)}
+.brand-copy strong{display:block;font-size:1rem;line-height:1;letter-spacing:.055em}.brand-copy small{display:block;color:var(--orange);font-size:.58rem;font-weight:900;margin-top:5px;letter-spacing:.045em}
+.brand-mark{width:44px;height:44px;display:grid;place-items:center;border:3px solid var(--orange);border-radius:50%;position:relative;background:#fff;box-shadow:0 5px 16px rgba(11,46,99,.10)}
+.brand-mark:before{content:"";position:absolute;inset:3px;border:2px solid var(--navy);border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(-25deg)}
+.brand-mark span{font-size:.62rem;font-weight:950;color:var(--navy);position:relative;z-index:1}
+.desktop-nav{display:flex;align-items:center;gap:22px}.desktop-nav a{font-size:.9rem;font-weight:750;color:var(--text)}.desktop-nav a:hover{color:var(--orange)}
+.header-call,.mobile-call{padding:11px 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:.9rem}
+.menu-toggle{display:none;border:0;background:transparent;font-size:1.6rem;color:var(--navy);cursor:pointer;padding:6px}
+.mobile-nav{display:none;border-top:1px solid var(--border);background:#fff}.mobile-nav-inner{padding:10px 0 18px;display:grid;gap:2px}.mobile-nav a{padding:12px 0;font-weight:750;color:var(--text)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px}.mobile-nav.is-open{display:block}
+@media(max-width:980px){.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
 </style>
