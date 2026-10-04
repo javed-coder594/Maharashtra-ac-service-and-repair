@@ -1,0 +1,8 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CTA from "../../components/CTA.astro";
+---
+<MainLayout title="Service Areas | Pune & Mumbai AC Service"><Header /><main><section class="page-hero"><div class="container"><span class="eyebrow">Service Areas</span><h1>AC service across Pune and Mumbai.</h1><p>Choose your city to find dedicated local AC service information.</p></div></section><section class="section"><div class="container cards"><a class="card area" href="/service-areas/pune/"><span>PUNE</span><h2>AC Service in Pune</h2><p>Explore AC service, repair and maintenance support across Pune.</p></a><a class="card area" href="/service-areas/mumbai/"><span>MUMBAI</span><h2>AC Service in Mumbai</h2><p>Explore AC service, repair and maintenance support across Mumbai.</p></a></div></section></main><CTA /><Footer /></MainLayout>
+<style>.page-hero{padding:100px 0;background:linear-gradient(135deg,#f7f9fc,#eaf5ff)}.cards{display:grid;grid-template-columns:1fr 1fr;gap:25px}.area{padding:35px}.area>span{color:var(--orange);font-weight:800;letter-spacing:.12em}@media(max-width:650px){.cards{grid-template-columns:1fr}}</style>
