@@ -1,0 +1,9 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+const services=["AC Service","AC Repair","AC Installation","AC Uninstallation","AC Gas Filling","AC Gas Leakage Repair","AC Maintenance","Split AC Service","Window AC Service","Cassette AC Service"];
+---
+<MainLayout title="AC Services | Maharashtra AC Service & Repair"><Header /><main><section class="page-hero"><div class="container"><span class="eyebrow">Our Services</span><h1>Professional AC services for every season.</h1><p>From routine maintenance to urgent repairs, our service pages will provide clear information for each AC requirement.</p></div></section><section class="section"><div class="container service-list">{services.map((service)=><article class="card"><div class="icon">❄</div><h2>{service}</h2><p>Detailed service information, process, benefits and FAQs will be added to this reusable service system.</p><a class="btn btn--secondary" href="/contact/">Request Service</a></article>)}</div></section></main><CTA /><Footer /></MainLayout>
+<style>.page-hero{padding:100px 0;background:linear-gradient(135deg,#f7f9fc,#eaf5ff)}.page-hero p{max-width:720px}.service-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service-list article{padding:28px}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:var(--blue-light);color:var(--blue);margin-bottom:18px}.service-list h2{font-size:1.35rem}.service-list .btn{margin-top:10px}@media(max-width:850px){.service-list{grid-template-columns:1fr 1fr}}@media(max-width:550px){.service-list{grid-template-columns:1fr}}</style>
