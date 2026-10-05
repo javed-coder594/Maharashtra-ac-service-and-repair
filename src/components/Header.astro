@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
       <img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto,q_auto/9cbcc38f-3e63-498a-895a-f8f9dede4341_1" alt="Maharashtra AC Service & Repair" width="220" height="70" />
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
-      {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
+      {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "/" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
     </nav>
     <a class="header-call" href="tel:+917378351743">Call 73783 51743 <span aria-hidden="true">↗</span></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
