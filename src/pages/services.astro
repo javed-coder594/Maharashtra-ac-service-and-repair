@@ -19,7 +19,7 @@ import CTA from "../components/CTA.astro";
 ["▣","Split AC Service","Focused cleaning and maintenance support for split air conditioners."],
 ["▤","Window AC Service","Cleaning, inspection and repair support for window AC units."],
 ["▥","Cassette AC Service","Maintenance and repair support for cassette AC systems."]
-].map(([icon,title,text],i)=><article class="card service-card reveal delay-{i%3}><div class="icon">{icon}</div><h2>{title}</h2><p>{text}</p><a class="service-link" href="/contact/">Request this service <span>→</span></a></article>)}
+].map(([icon,title,text],i)=><article class={`card service-card reveal delay-${(i%3)+1}`}><div class="icon">{icon}</div><h2>{title}</h2><p>{text}</p><a class="service-link" href="/contact/">Request this service <span>→</span></a></article>)}
 </div></section>
 <section class="section section--soft"><div class="container process"><div><span class="eyebrow">Simple Process</span><h2>From enquiry to service, without the clutter.</h2></div><div class="steps"><div><b>01</b><h3>Contact</h3><p>Call or email with your AC requirement.</p></div><div><b>02</b><h3>Discuss</h3><p>Share the issue and service details.</p></div><div><b>03</b><h3>Service</h3><p>Get the appropriate AC support.</p></div></div></div></section>
 </main><CTA /><Footer /></MainLayout>
