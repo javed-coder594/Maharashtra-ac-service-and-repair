@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" role="img" aria-labelledby="title desc">
+<title id="title">Maharashtra AC Service &amp; Repair</title>
+<desc id="desc">Maharashtra AC Service &amp; Repair logo with a blue air conditioner and orange service accent.</desc>
+<defs><linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#0b4f6c"/><stop offset="1" stop-color="#062c3e"/></linearGradient></defs>
+<rect width="800" height="250" fill="none"/>
+<g transform="translate(18 22)">
+<rect x="0" y="0" width="205" height="160" rx="22" fill="url(#b)"/>
+<rect x="22" y="28" width="161" height="48" rx="10" fill="#fff"/>
+<path d="M38 98h130M38 119h130M55 145h96" stroke="#d89c45" stroke-width="10" stroke-linecap="round"/>
+<path d="M83 50h38" stroke="#0b4f6c" stroke-width="8" stroke-linecap="round"/>
+<path d="M46 78l20 22 20-22M115 78l20 22 20-22" fill="none" stroke="#d89c45" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="173" cy="18" r="28" fill="#d89c45"/>
+<path d="M173 4v28M159 18h28M163 8l20 20M183 8l-20 20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g transform="translate(248 42)">
+<text x="0" y="48" font-family="Arial,Helvetica,sans-serif" font-size="46" font-weight="800" fill="#062c3e">MAHARASHTRA</text>
+<text x="0" y="101" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="800" fill="#0b4f6c">AC SERVICE &amp; REPAIR</text>
+<rect x="2" y="122" width="390" height="5" rx="2.5" fill="#d89c45"/>
+<text x="0" y="159" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="#0b4f6c">PUNE • MUMBAI • MAHARASHTRA</text>
+</g>
+</svg>
