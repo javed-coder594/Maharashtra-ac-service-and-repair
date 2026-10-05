@@ -13,11 +13,11 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
     <nav class="desktop-nav" aria-label="Primary navigation">
       {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "/" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
     </nav>
-    <a class="header-call" href="tel:+917378351743">Call 73783 51743 <span aria-hidden="true">↗</span></a>
+    <a class="header-call" href="tel:+917378351743"><span>Call</span> 73783 51743 <b>↗</b></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
   </div>
   <div class="mobile-nav" data-mobile-nav><div class="container mobile-nav-inner">
-    {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
+    {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "/" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
     <a class="mobile-call" href="tel:+917378351743">Call 73783 51743</a>
   </div></div>
 </header>
@@ -26,12 +26,12 @@ const initMenu=()=>{const button=document.querySelector(".menu-toggle");const me
 document.addEventListener("astro:page-load",initMenu); initMenu();
 </script>
 <style>
-.site-header{position:sticky;top:0;z-index:50;background:rgba(7,31,67,.97);border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(4,18,40,.18)}
-.header-inner{min-height:88px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;line-height:0;width:220px}.brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(255,255,255,.12))}
-.desktop-nav{display:flex;align-items:center;gap:7px}.desktop-nav a{position:relative;padding:9px 12px;border-radius:9px;font-size:.88rem;font-weight:800;color:#d9e5f2;transition:color .2s ease,background .2s ease,transform .2s ease}.desktop-nav a:hover{color:#fff;background:rgba(255,255,255,.08);transform:translateY(-1px)}.desktop-nav a.active{color:#fff;background:var(--orange);box-shadow:0 7px 18px rgba(244,122,0,.2)}.desktop-nav a.active:hover{background:var(--orange-dark)}
-.header-call,.mobile-call{padding:11px 17px;border-radius:999px;background:var(--orange);color:#fff;font-weight:850;font-size:.84rem;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease,background .2s ease}.header-call:hover,.mobile-call:hover{transform:translateY(-2px);background:var(--orange-dark);box-shadow:0 10px 25px rgba(244,122,0,.3)}
-.menu-toggle{display:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);font-size:1.45rem;color:#fff;border-radius:10px;cursor:pointer;padding:6px 10px}
-.mobile-nav{display:none;border-top:1px solid rgba(255,255,255,.1);background:var(--navy-dark)}.mobile-nav-inner{padding:10px 18px 18px;display:grid;gap:3px}.mobile-nav a{padding:12px 13px;border-radius:9px;font-weight:800;color:#d9e5f2}.mobile-nav a:hover{background:rgba(255,255,255,.08);color:#fff}.mobile-nav a.active{background:rgba(244,122,0,.18);color:#ffad67;border-left:3px solid var(--orange)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px;background:var(--orange)}.mobile-nav.is-open{display:block}
-@media(max-width:1100px){.brand{width:200px}.brand img{width:200px}.desktop-nav{gap:3px}.desktop-nav a{padding-inline:9px}}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid #dce6ef;backdrop-filter:blur(16px);box-shadow:0 6px 24px rgba(30,70,110,.07)}
+.header-inner{min-height:88px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;line-height:0;width:220px}.brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(22,119,200,.12))}
+.desktop-nav{display:flex;align-items:center;gap:4px}.desktop-nav a{position:relative;padding:10px 12px;border-radius:10px;font-size:.88rem;font-weight:800;color:#42536a;transition:color .2s ease,background .2s ease,transform .2s ease}.desktop-nav a:after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:3px;background:var(--orange);transform:scaleX(0);transform-origin:center;transition:transform .2s ease}.desktop-nav a:hover{color:var(--navy);background:#eef6fd;transform:translateY(-1px)}.desktop-nav a.active{color:var(--navy);background:#eaf5ff}.desktop-nav a.active:after{transform:scaleX(1)}
+.header-call,.mobile-call{padding:11px 17px;border-radius:999px;background:var(--orange);color:#fff;font-weight:850;font-size:.84rem;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease,background .2s ease}.header-call:hover,.mobile-call:hover{transform:translateY(-2px);background:var(--orange-dark);box-shadow:0 10px 25px rgba(244,122,0,.25)}.header-call span{opacity:.8}.header-call b{margin-left:4px}
+.menu-toggle{display:none;border:1px solid #cbd9e6;background:#f4f8fc;font-size:1.35rem;color:var(--navy);border-radius:10px;cursor:pointer;padding:6px 10px}
+.mobile-nav{display:none;border-top:1px solid #e1e9f0;background:#fff}.mobile-nav-inner{padding:10px 18px 18px;display:grid;gap:3px}.mobile-nav a{padding:12px 13px;border-radius:9px;font-weight:800;color:#42536a}.mobile-nav a:hover{background:#eef6fd;color:var(--navy)}.mobile-nav a.active{background:#eaf5ff;color:var(--navy);border-left:3px solid var(--orange)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px;background:var(--orange)}.mobile-nav.is-open{display:block}
+@media(max-width:1100px){.brand{width:200px}.brand img{width:200px}.desktop-nav{gap:2px}.desktop-nav a{padding-inline:8px}}
 @media(max-width:980px){.header-inner{min-height:78px}.brand{width:180px}.brand img{width:180px}.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
 </style>
