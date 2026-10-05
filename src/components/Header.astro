@@ -7,7 +7,7 @@ const navItems = [
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home">
-      <img src="/images/maharashtra-ac-logo.svg" alt="Maharashtra AC Service & Repair" width="240" height="75" />
+      <img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto,q_auto/9cbcc38f-3e63-498a-895a-f8f9dede4341_1" alt="Maharashtra AC Service & Repair" width="220" height="70" />
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">{navItems.map((item)=><a href={item.href}>{item.label}</a>)}</nav>
     <a class="header-call" href="tel:+919021803472">Call Now <span aria-hidden="true">↗</span></a>
@@ -25,11 +25,11 @@ initMenu();
 </script>
 <style>
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-.header-inner{min-height:92px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;line-height:0;width:240px}.brand img{display:block;width:240px;height:auto;max-height:76px;object-fit:contain;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(11,46,99,.12))}
+.header-inner{min-height:92px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;line-height:0;width:220px}.brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(11,46,99,.12))}
 .desktop-nav{display:flex;align-items:center;gap:22px}.desktop-nav a{position:relative;font-size:.9rem;font-weight:750;color:var(--text)}.desktop-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--orange);transition:right .25s ease}.desktop-nav a:hover{color:var(--orange)}.desktop-nav a:hover:after{right:0}
 .header-call,.mobile-call{padding:12px 19px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:.9rem;transition:transform .25s ease,box-shadow .25s ease}.header-call:hover,.mobile-call:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(11,46,99,.22)}
 .menu-toggle{display:none;border:0;background:transparent;font-size:1.6rem;color:var(--navy);cursor:pointer;padding:6px}
 .mobile-nav{display:none;border-top:1px solid var(--border);background:#fff}.mobile-nav-inner{padding:10px 18px 18px;display:grid;gap:2px}.mobile-nav a{padding:12px 0;font-weight:750;color:var(--text)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px}.mobile-nav.is-open{display:block}
-@media(max-width:1100px){.brand{width:210px}.brand img{width:210px}.desktop-nav{gap:15px}}
-@media(max-width:980px){.header-inner{min-height:82px}.brand{width:190px}.brand img{width:190px}.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
+@media(max-width:1100px){.brand{width:200px}.brand img{width:200px}.desktop-nav{gap:15px}}
+@media(max-width:980px){.header-inner{min-height:82px}.brand{width:180px}.brand img{width:180px}.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
 </style>
