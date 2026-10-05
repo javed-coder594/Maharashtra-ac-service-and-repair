@@ -1,23 +1,41 @@
 ---
 const navItems = [
-  { label:"Home", href:"/" }, { label:"About", href:"/about/" }, { label:"Services", href:"/services/" },
+  { label:"Home", href:"/" }, { label:"About", href:"/about/" },
   { label:"Service Areas", href:"/service-areas/" }, { label:"Blog", href:"/blog/" }, { label:"Contact", href:"/contact/" },
 ];
+const serviceItems = [
+  ["AC Service","#ac-service"],["AC Repair","#ac-repair"],["AC Installation","#ac-installation"],["AC Uninstallation","#ac-uninstallation"],
+  ["AC Gas Filling","#ac-gas-filling"],["Gas Leakage Repair","#ac-gas-leakage"],["AC Maintenance","#ac-maintenance"],["Split AC Service","#split-ac-service"],
+  ["Window AC Service","#window-ac-service"],["Cassette AC Service","#cassette-ac-service"],["AC Not Cooling","#ac-not-cooling"],["AC Relocation","#ac-relocation"]
+];
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const servicesActive = currentPath === "/services" || currentPath.startsWith("/services/");
 ---
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home">
-      <img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto/q_auto/9cbcc38f-3e63-498a-895a-f8f9dede4341_1" alt="Maharashtra AC Service & Repair" width="220" height="70" />
+      <img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto,q_auto/9cbcc38f-3e63-498a-895a-f8f9dede4341_1" alt="Maharashtra AC Service & Repair" width="270" height="82" />
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
-      {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "/" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
+      <a class:list={{active:currentPath === "/"}} href="/">Home</a>
+      <a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a>
+      <div class:list={{"nav-dropdown":true,active:servicesActive}}>
+        <a class="nav-dropdown-trigger" href="/services/" aria-haspopup="true">Services <span>⌄</span></a>
+        <div class="nav-dropdown-menu">
+          {serviceItems.map(([label,href])=><a href={"/services/"+href}>{label}</a>)}
+        </div>
+      </div>
+      <a class:list={{active:currentPath === "/service-areas" || currentPath.startsWith("/service-areas/")}} href="/service-areas/">Service Areas</a>
+      <a class:list={{active:currentPath === "/blog" || currentPath.startsWith("/blog/")}} href="/blog/">Blog</a>
+      <a class:list={{active:currentPath === "/contact" || currentPath.startsWith("/contact/")}} href="/contact/">Contact</a>
     </nav>
     <a class="header-call" href="tel:+917378351743"><span>Call</span> 73783 51743 <b>↗</b></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
   </div>
   <div class="mobile-nav" data-mobile-nav><div class="container mobile-nav-inner">
-    {navItems.map((item)=>{const active=item.href === "/" ? currentPath === "/" : currentPath === item.href.replace(/\/$/,"") || currentPath.startsWith(item.href.replace(/\/$/,"") + "/"); return <a class:list={{active}} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>})}
+    <a class:list={{active:currentPath === "/"}} href="/">Home</a><a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a>
+    <details class="mobile-services"><summary>Services</summary>{serviceItems.map(([label,href])=><a href={"/services/"+href}>{label}</a>)}</details>
+    <a class:list={{active:currentPath === "/service-areas" || currentPath.startsWith("/service-areas/")}} href="/service-areas/">Service Areas</a><a class:list={{active:currentPath === "/blog" || currentPath.startsWith("/blog/")}} href="/blog/">Blog</a><a class:list={{active:currentPath === "/contact" || currentPath.startsWith("/contact/")}} href="/contact/">Contact</a>
     <a class="mobile-call" href="tel:+917378351743">Call 73783 51743</a>
   </div></div>
 </header>
@@ -26,12 +44,12 @@ const initMenu=()=>{const button=document.querySelector(".menu-toggle");const me
 document.addEventListener("astro:page-load",initMenu); initMenu();
 </script>
 <style>
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid #dce6ef;backdrop-filter:blur(16px);box-shadow:0 6px 24px rgba(30,70,110,.07)}
-.header-inner{min-height:88px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;margin-left:-10px;line-height:0;width:220px}.brand img{display:block;width:220px;height:auto;max-height:76px;object-fit:contain;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(22,119,200,.12))}
-.desktop-nav{display:flex;align-items:center;gap:4px}.desktop-nav a{position:relative;padding:10px 12px;border-radius:10px;font-size:.88rem;font-weight:800;color:#42536a;transition:color .2s ease,background .2s ease,transform .2s ease}.desktop-nav a:after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:3px;background:var(--orange);transform:scaleX(0);transform-origin:center;transition:transform .2s ease}.desktop-nav a:hover{color:var(--navy);background:#eef6fd;transform:translateY(-1px)}.desktop-nav a.active{color:var(--navy);background:#eaf5ff}.desktop-nav a.active:after{transform:scaleX(1)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #dce6ef;backdrop-filter:blur(16px);box-shadow:0 6px 24px rgba(30,70,110,.07)}
+.header-inner{min-height:88px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;margin-left:-18px;line-height:0;width:270px;height:82px}.brand img{display:block;width:270px;height:82px;max-height:82px;object-fit:contain;object-position:left center;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(22,119,200,.12))}
+.desktop-nav{display:flex;align-items:center;gap:3px}.desktop-nav>a,.nav-dropdown-trigger{position:relative;padding:10px 12px;border-radius:10px;font-size:.88rem;font-weight:800;color:#42536a;transition:color .2s ease,background .2s ease,transform .2s ease}.desktop-nav>a:after,.nav-dropdown-trigger:after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:3px;background:var(--orange);transform:scaleX(0);transition:transform .2s ease}.desktop-nav>a:hover,.nav-dropdown-trigger:hover,.nav-dropdown.active .nav-dropdown-trigger{color:var(--navy);background:#eaf5ff}.desktop-nav>a.active:after,.nav-dropdown.active .nav-dropdown-trigger:after{transform:scaleX(1)}
+.nav-dropdown{position:relative}.nav-dropdown-trigger span{font-size:.75rem;margin-left:4px;color:var(--orange)}.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(8px);width:255px;padding:10px;background:#fff;border:1px solid #d5e0e9;border-radius:16px;box-shadow:0 20px 45px rgba(23,59,99,.16);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,transform .2s ease}.nav-dropdown-menu:before{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;background:#fff;border-left:1px solid #d5e0e9;border-top:1px solid #d5e0e9;transform:translateX(-50%) rotate(45deg)}.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:9px;color:#42536a;font-size:.82rem;font-weight:750}.nav-dropdown-menu a:hover{background:#eef6fd;color:var(--navy)}
 .header-call,.mobile-call{padding:11px 17px;border-radius:999px;background:var(--orange);color:#fff;font-weight:850;font-size:.84rem;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease,background .2s ease}.header-call:hover,.mobile-call:hover{transform:translateY(-2px);background:var(--orange-dark);box-shadow:0 10px 25px rgba(244,122,0,.25)}.header-call span{opacity:.8}.header-call b{margin-left:4px}
-.menu-toggle{display:none;border:1px solid #cbd9e6;background:#f4f8fc;font-size:1.35rem;color:var(--navy);border-radius:10px;cursor:pointer;padding:6px 10px}
-.mobile-nav{display:none;border-top:1px solid #e1e9f0;background:#fff}.mobile-nav-inner{padding:10px 18px 18px;display:grid;gap:3px}.mobile-nav a{padding:12px 13px;border-radius:9px;font-weight:800;color:#42536a}.mobile-nav a:hover{background:#eef6fd;color:var(--navy)}.mobile-nav a.active{background:#eaf5ff;color:var(--navy);border-left:3px solid var(--orange)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px;background:var(--orange)}.mobile-nav.is-open{display:block}
-@media(max-width:1100px){.brand{width:200px}.brand img{width:200px}.desktop-nav{gap:2px}.desktop-nav a{padding-inline:8px}}
-@media(max-width:980px){.header-inner{min-height:78px}.brand{width:180px;margin-left:-6px}.brand img{width:180px}.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
+.menu-toggle{display:none;border:1px solid #cbd9e6;background:#f4f8fc;font-size:1.35rem;color:var(--navy);border-radius:10px;cursor:pointer;padding:6px 10px}.mobile-nav{display:none;border-top:1px solid #e1e9f0;background:#fff}.mobile-nav-inner{padding:10px 18px 18px;display:grid;gap:3px}.mobile-nav a,.mobile-services summary{padding:12px 13px;border-radius:9px;font-weight:800;color:#42536a}.mobile-nav a:hover,.mobile-services summary:hover{background:#eef6fd;color:var(--navy)}.mobile-nav a.active{background:#eaf5ff;color:var(--navy);border-left:3px solid var(--orange)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px;background:var(--orange)}.mobile-nav.is-open{display:block}.mobile-services{border-radius:9px}.mobile-services summary{cursor:pointer;list-style:none}.mobile-services summary::-webkit-details-marker{display:none}.mobile-services summary:after{content:"⌄";float:right;color:var(--orange)}.mobile-services[open] summary:after{content:"⌃"}.mobile-services a{padding-left:28px;font-size:.82rem}
+@media(max-width:1100px){.brand{width:245px}.brand img{width:245px}.desktop-nav{gap:1px}.desktop-nav>a,.nav-dropdown-trigger{padding-inline:8px}}
+@media(max-width:980px){.header-inner{min-height:78px}.brand{width:205px;height:70px;margin-left:-8px}.brand img{width:205px;height:70px}.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
 </style>
