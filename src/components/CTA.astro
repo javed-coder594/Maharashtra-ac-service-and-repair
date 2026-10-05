@@ -2,17 +2,8 @@
 interface Props { title?:string; text?:string; }
 const { title="Need AC Service or Repair?", text="Book professional AC support for your home or business across Pune and Mumbai." } = Astro.props;
 ---
-<section class="cta">
-  <div class="container cta-inner">
-    <div class="cta-copy"><span class="eyebrow">Fast AC Support</span><h2>{title}</h2><p>{text}</p></div>
-    <div class="actions"><a class="btn btn--primary" href="tel:+917378351743">Call Now <span>↗</span></a><a class="btn btn--secondary" href="/contact/">Book Service</a></div>
-  </div>
-</section>
+<section class="cta"><div class="container cta-inner"><div class="cta-copy"><span class="eyebrow">Fast AC Support</span><h2>{title}</h2><p>{text}</p></div><div class="actions"><a class="btn btn--primary" href="tel:+917378351743">Call Now <span>↗</span></a><a class="btn btn--secondary" href="/contact/">Book Service</a></div></div></section>
 <style>
-.cta{padding:82px 0;background:radial-gradient(circle at 90% 20%,rgba(244,122,0,.16),transparent 28%),linear-gradient(135deg,var(--navy-dark),var(--navy));position:relative;overflow:hidden}
-.cta:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.1);border-radius:50%;left:-120px;bottom:-150px;box-shadow:0 0 0 45px rgba(255,255,255,.025)}
-.cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px}.cta-copy{max-width:700px}
-.cta h2{color:#fff;margin-top:10px}.cta p{color:#c6d3e4;max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap}
-.cta .btn--secondary{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff}
+.cta{padding:78px 0;background:linear-gradient(135deg,#f4f9fd,#e8f2fa);position:relative;overflow:hidden;border-top:1px solid #d8e4ed;border-bottom:1px solid #d8e4ed}.cta:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(22,119,200,.12);border-radius:50%;right:-110px;bottom:-150px;box-shadow:0 0 0 45px rgba(244,122,0,.025)}.cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px}.cta-copy{max-width:700px}.cta h2{color:var(--navy-dark);margin-top:10px}.cta p{color:#66788b;max-width:620px}.actions{display:flex;gap:12px;flex-wrap:wrap}.cta .btn--secondary{background:#fff;color:var(--navy);border-color:#c7d6e3}.cta .btn--secondary:hover{background:#f5faff}
 @media(max-width:700px){.cta-inner{flex-direction:column;align-items:flex-start}}
 </style>
