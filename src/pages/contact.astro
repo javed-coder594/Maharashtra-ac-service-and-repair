@@ -2,6 +2,33 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
 ---
-<MainLayout title="Contact | Maharashtra AC Service & Repair"><Header /><main><section class="page-hero"><div class="container"><span class="eyebrow">Contact</span><h1>Book AC service with our team.</h1><p>Contact details, service hours and enquiry form will be finalized when the business information is provided.</p></div></section><section class="section"><div class="container contact-grid"><div class="card info"><h2>Get in touch</h2><p><strong>Phone:</strong> <a href="tel:+919021803472">+91 90218 03472</a></p><p><strong>Service:</strong> Pune & Mumbai</p><p><strong>Hours:</strong> To be confirmed</p></div><form class="card form"><label>Name<input name="name" required /></label><label>Phone<input name="phone" type="tel" required /></label><label>Message<textarea name="message" rows="5"></textarea></label><button class="btn btn--primary" type="submit">Request Service</button></form></div></section></main><Footer /></MainLayout>
-<style>.page-hero{padding:100px 0;background:linear-gradient(135deg,#f7f9fc,#eaf5ff)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.info,.form{padding:32px}.form{display:grid;gap:18px}.form label{display:grid;gap:7px;font-weight:700}.form input,.form textarea{width:100%;padding:13px 14px;border:1px solid var(--border);border-radius:10px;font:inherit}.form button{border:0;cursor:pointer}@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}</style>
+<MainLayout title="Contact | Maharashtra AC Service & Repair" description="Contact Maharashtra AC Service & Repair for AC service, repair, installation and maintenance in Pune and Mumbai.">
+<Header />
+<main>
+<section class="page-hero"><div class="container hero-inner"><span class="eyebrow">Get In Touch</span><h1>Let’s get your AC back to its best.</h1><p>Tell us what you need and our team can guide you toward the right AC service, repair or maintenance option.</p><div class="hero-actions"><a class="btn btn--primary" href="tel:+919021803472">Call +91 90218 03472</a><a class="btn btn--secondary" href="mailto:maharastraavservicerepair15@gmail.com">Email Us</a></div></div></section>
+<section class="section"><div class="container contact-grid">
+<div class="contact-info">
+<span class="eyebrow">Contact Details</span><h2>Simple, direct support.</h2><p>For service enquiries across Pune and Mumbai, reach us by phone or email.</p>
+<div class="info-list">
+<a class="info-card" href="tel:+919021803472"><span class="info-icon">☎</span><span><small>Phone</small><strong>+91 90218 03472</strong></span></a>
+<a class="info-card" href="mailto:maharastraavservicerepair15@gmail.com"><span class="info-icon">@</span><span><small>Email</small><strong>maharastraavservicerepair15@gmail.com</strong></span></a>
+<div class="info-card"><span class="info-icon">⌖</span><span><small>Service Areas</small><strong>Pune &amp; Mumbai</strong></span></div>
+</div></div>
+<form class="card form" action="#" method="post" onsubmit="return false"><div class="form-head"><span>Service Enquiry</span><h2>Tell us what you need.</h2></div>
+<label>Name<input name="name" autocomplete="name" placeholder="Your name" required /></label>
+<label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="+91" required /></label>
+<label>Message<textarea name="message" rows="5" placeholder="AC service, repair, installation..."></textarea></label>
+<button class="btn btn--primary" type="submit">Request Service <span>↗</span></button>
+<p class="form-note">Prefer email? Write to <a href="mailto:maharastraavservicerepair15@gmail.com">maharastraavservicerepair15@gmail.com</a>.</p>
+</form>
+</div></section>
+</main><CTA /><Footer />
+</MainLayout>
+<style>
+.page-hero{padding:104px 0 92px;background:radial-gradient(circle at 78% 15%,#eaf5ff,transparent 32%),linear-gradient(135deg,#f7f9fc,#fff)}.hero-inner{max-width:900px}.page-hero p{max-width:720px;font-size:1.08rem}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}.contact-info>p{max-width:520px}.info-list{display:grid;gap:12px;margin-top:30px}.info-card{display:flex;align-items:center;gap:15px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:15px;transition:transform .25s ease,box-shadow .25s ease}.info-card:hover{transform:translateX(4px);box-shadow:var(--shadow)}.info-icon{width:42px;height:42px;display:grid;place-items:center;background:#fff;color:var(--orange);border-radius:12px;font-weight:900}.info-card small{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}.info-card strong{display:block;color:var(--navy);font-size:.92rem;overflow-wrap:anywhere}
+.form{padding:32px}.form-head>span{color:var(--orange);font-size:.75rem;font-weight:850;text-transform:uppercase;letter-spacing:.1em}.form-head h2{margin-top:7px}.form{display:grid;gap:17px}.form label{display:grid;gap:7px;font-weight:750;color:var(--navy)}.form input,.form textarea{width:100%;padding:13px 14px;border:1px solid var(--border);border-radius:11px;background:#fff;font:inherit;outline:none;transition:border-color .2s ease,box-shadow .2s ease}.form input:focus,.form textarea:focus{border-color:#9eb6d0;box-shadow:0 0 0 4px rgba(22,119,200,.08)}.form button{border:0;cursor:pointer}.form-note{font-size:.78rem;margin:0}.form-note a{color:var(--orange-dark);font-weight:800}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:45px}}
+</style>
