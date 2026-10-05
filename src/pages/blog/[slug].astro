@@ -1,6 +1,5 @@
 ---
 import BlogLayout from "../../layouts/BlogLayout.astro";
-
 export function getStaticPaths() {
   const posts = import.meta.glob("../../content/blog/*.md", { eager: true });
   return Object.entries(posts).map(([path, module]: any) => {
@@ -8,17 +7,17 @@ export function getStaticPaths() {
     return { params: { slug }, props: { post: module } };
   });
 }
-
 const { post } = Astro.props;
 const Content = post.default;
 const meta = post.frontmatter;
 ---
-<BlogLayout title={meta.title} description={meta.description}>
+<BlogLayout title={meta.metaTitle || meta.title} description={meta.metaDescription || meta.description}>
   <header class="article-head">
     <span class="eyebrow">{meta.category}</span>
     <h1>{meta.title}</h1>
-    <p class="post-meta">Published {meta.date} · {meta.author}</p>
+    <p class="post-meta">Published {meta.date} · {meta.author} · {meta.readTime}</p>
   </header>
+  {meta.image && <img class="featured-image" src={meta.image} alt={meta.imageAlt || meta.title} width="1600" height="900" fetchpriority="high" />}
   <div class="post-content"><Content /></div>
 </BlogLayout>
 <style>
