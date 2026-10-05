@@ -1,12 +1,53 @@
 <footer class="footer">
-<div class="container footer-grid">
-<div><a class="footer-logo" href="/" aria-label="Maharashtra AC Service & Repair home"><img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto,q_auto/9cbcc38f-3e63-498a-895a-f8f9dede4341_1" alt="Maharashtra AC Service & Repair" width="240" height="76" loading="lazy" /></a><p>Reliable AC service, repair, installation and maintenance support across Pune and Mumbai.</p></div>
-<div><h3>Quick Links</h3><a href="/about/">About</a><a href="/services/">Services</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
-<div><h3>Service Areas</h3><a href="/service-areas/pune/">Pune</a><a href="/service-areas/mumbai/">Mumbai</a></div>
-<div><h3>Contact</h3><a href="tel:+919021803472">+91 90218 03472</a><a href="/contact/">Request a service</a></div>
-</div>
-<div class="container copyright">© {new Date().getFullYear()} Maharashtra AC Service & Repair. All rights reserved.</div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="footer-name" href="/" aria-label="Maharashtra AC Service & Repair home">
+        <span>MAHARASHTRA</span>
+        <strong>AC SERVICE &amp; REPAIR</strong>
+      </a>
+      <p>Professional AC service, repair, installation and maintenance support across Pune and Mumbai.</p>
+      <a class="footer-email" href="mailto:maharastraavservicerepair15@gmail.com">maharastraavservicerepair15@gmail.com</a>
+    </div>
+    <div>
+      <h3>Explore</h3>
+      <a href="/about/">About Us</a><a href="/services/">AC Services</a><a href="/service-areas/">Service Areas</a><a href="/blog/">AC Blog</a>
+    </div>
+    <div>
+      <h3>Service Areas</h3>
+      <a href="/service-areas/pune/">AC Service in Pune</a><a href="/service-areas/mumbai/">AC Service in Mumbai</a>
+      <span class="area-note">Pune • Mumbai • Maharashtra</span>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <a href="tel:+919021803472">+91 90218 03472</a>
+      <a href="mailto:maharastraavservicerepair15@gmail.com">Email us</a>
+      <a class="footer-cta" href="/contact/">Request Service <span>↗</span></a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} Maharashtra AC Service &amp; Repair</span>
+    <span>Reliable cooling. Local support.</span>
+  </div>
 </footer>
 <style>
-.footer{background:var(--navy-dark);color:#fff;padding:70px 0 20px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}.footer h3{color:#fff;font-size:1rem;margin-bottom:14px}.footer p,.footer a{color:#b9c6d8;display:block;margin-bottom:9px}.footer-logo{width:240px;display:block;margin-bottom:12px;line-height:0}.footer-logo img{display:block;width:240px;height:auto;filter:drop-shadow(0 6px 12px rgba(0,0,0,.12));transition:transform .3s ease}.footer-logo:hover img{transform:scale(1.02)}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:50px;padding-top:18px;color:#94a6bd;font-size:.82rem}@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.footer-grid{grid-template-columns:1fr}.footer-logo{width:210px}.footer-logo img{width:210px}}
+.footer{background:var(--navy-dark);color:#fff;padding:76px 0 20px;position:relative;overflow:hidden}
+.footer:before{content:"";position:absolute;inset:auto -120px -180px auto;width:420px;height:420px;border:1px solid rgba(244,122,0,.18);border-radius:50%;box-shadow:0 0 0 55px rgba(244,122,0,.035),0 0 0 110px rgba(244,122,0,.025);pointer-events:none}
+.footer-grid{position:relative;z-index:1;display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:42px}
+.footer-brand{max-width:390px}
+.footer-name{display:inline-flex;flex-direction:column;gap:3px;margin-bottom:18px;line-height:1}
+.footer-name span{font-size:1.45rem;font-weight:900;letter-spacing:.07em;color:#fff}
+.footer-name strong{font-size:.86rem;letter-spacing:.12em;color:var(--orange)}
+.footer p,.footer a{color:#b9c6d8}
+.footer p{max-width:360px;margin-bottom:14px}
+.footer a{display:block;margin-bottom:10px;transition:color .2s ease,transform .2s ease}
+.footer a:hover{color:#fff;transform:translateX(3px)}
+.footer-email{font-size:.9rem;overflow-wrap:anywhere}
+.footer h3{color:#fff;font-size:.98rem;margin:3px 0 16px;letter-spacing:.01em}
+.area-note{display:block;margin-top:14px;color:#8194ad;font-size:.78rem;letter-spacing:.04em}
+.footer-cta{display:inline-flex!important;align-items:center;gap:7px;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:10px;color:#fff!important;width:max-content}
+.footer-cta span{color:var(--orange)}
+.footer-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.11);margin-top:52px;padding-top:18px;display:flex;justify-content:space-between;gap:18px;color:#8295ae;font-size:.78rem}
+@media(max-width:850px){.footer-grid{grid-template-columns:1.5fr 1fr 1fr}}
+@media(max-width:650px){.footer-grid{grid-template-columns:1fr 1fr;gap:34px}.footer-brand{grid-column:1/-1}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
 </style>
