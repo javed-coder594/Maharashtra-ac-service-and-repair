@@ -3,7 +3,26 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CTA from "../components/CTA.astro";
-const services=["AC Service","AC Repair","AC Installation","AC Uninstallation","AC Gas Filling","AC Gas Leakage Repair","AC Maintenance","Split AC Service","Window AC Service","Cassette AC Service"];
 ---
-<MainLayout title="AC Services | Maharashtra AC Service & Repair"><Header /><main><section class="page-hero"><div class="container"><span class="eyebrow">Our Services</span><h1>Professional AC services for every season.</h1><p>From routine maintenance to urgent repairs, our service pages will provide clear information for each AC requirement.</p></div></section><section class="section"><div class="container service-list">{services.map((service)=><article class="card"><div class="icon">❄</div><h2>{service}</h2><p>Detailed service information, process, benefits and FAQs will be added to this reusable service system.</p><a class="btn btn--secondary" href="/contact/">Request Service</a></article>)}</div></section></main><CTA /><Footer /></MainLayout>
-<style>.page-hero{padding:100px 0;background:linear-gradient(135deg,#f7f9fc,#eaf5ff)}.page-hero p{max-width:720px}.service-list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service-list article{padding:28px}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:var(--blue-light);color:var(--blue);margin-bottom:18px}.service-list h2{font-size:1.35rem}.service-list .btn{margin-top:10px}@media(max-width:850px){.service-list{grid-template-columns:1fr 1fr}}@media(max-width:550px){.service-list{grid-template-columns:1fr}}</style>
+<MainLayout title="AC Services | Maharashtra AC Service & Repair" description="Explore AC service, repair, installation, gas service and maintenance options across Pune and Mumbai.">
+<Header /><main>
+<section class="page-hero"><div class="container"><span class="eyebrow">Our Services</span><h1>Complete AC care for every requirement.</h1><p>From regular cleaning to urgent repair and installation support, explore the services available for homes and businesses.</p><div class="service-hero-actions"><a class="btn btn--primary" href="/contact/">Request Service</a><a class="btn btn--secondary" href="tel:+919021803472">Call Now</a></div></div></section>
+<section class="section"><div class="container service-list">
+{[
+["❄","AC Service","Cleaning, inspection and performance checks for better everyday cooling."],
+["⚙","AC Repair","Troubleshooting for cooling, noise, water leakage and other common issues."],
+["＋","AC Installation","Professional installation support for new split and other AC systems."],
+["↗","AC Uninstallation","Careful AC removal for relocation, replacement or renovation work."],
+["◌","AC Gas Filling","Refrigerant-related inspection and service when cooling performance drops."],
+["⌁","AC Gas Leakage Repair","Inspection and repair support when refrigerant leakage is suspected."],
+["✓","AC Maintenance","Preventive maintenance to help keep your AC efficient and dependable."],
+["▣","Split AC Service","Focused cleaning and maintenance support for split air conditioners."],
+["▤","Window AC Service","Cleaning, inspection and repair support for window AC units."],
+["▥","Cassette AC Service","Maintenance and repair support for cassette AC systems."]
+].map(([icon,title,text],i)=><article class="card service-card reveal delay-{i%3}><div class="icon">{icon}</div><h2>{title}</h2><p>{text}</p><a class="service-link" href="/contact/">Request this service <span>→</span></a></article>)}
+</div></section>
+<section class="section section--soft"><div class="container process"><div><span class="eyebrow">Simple Process</span><h2>From enquiry to service, without the clutter.</h2></div><div class="steps"><div><b>01</b><h3>Contact</h3><p>Call or email with your AC requirement.</p></div><div><b>02</b><h3>Discuss</h3><p>Share the issue and service details.</p></div><div><b>03</b><h3>Service</h3><p>Get the appropriate AC support.</p></div></div></div></section>
+</main><CTA /><Footer /></MainLayout>
+<style>
+.page-hero{padding:98px 0;background:radial-gradient(circle at 80% 15%,#eaf5ff,transparent 32%),linear-gradient(135deg,#f7f9fc,#fff)}.page-hero p{max-width:760px;font-size:1.08rem}.service-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.service-list{grid-template-columns:repeat(3,1fr)}.service-card{padding:26px}.icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--blue-light);color:var(--blue);font-size:1.2rem;margin-bottom:20px;transition:transform .3s ease,background .3s ease}.service-card:hover .icon{transform:rotate(-6deg) scale(1.08);background:#dcedfc}.service-card h2{font-size:1.35rem}.service-card p{min-height:78px}.service-link{color:var(--orange-dark);font-weight:850}.service-link span{display:inline-block;transition:transform .2s ease}.service-card:hover .service-link span{transform:translateX(5px)}.process{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.steps>div{padding:22px;background:#fff;border:1px solid var(--border);border-radius:16px}.steps b{color:var(--orange);font-size:.75rem}.steps h3{margin-top:15px}.steps p{font-size:.9rem;margin-bottom:0}@media(max-width:900px){.service-list{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:560px){.service-list,.steps{grid-template-columns:1fr}}
+</style>
