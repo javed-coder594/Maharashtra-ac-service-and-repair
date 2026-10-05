@@ -4,17 +4,14 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 const posts = Object.values(import.meta.glob("../../content/blog/*.md", { eager:true, import:"frontmatter" }));
 ---
-<MainLayout title="AC Service Blog | Maharashtra AC Service & Repair" description="AC service, maintenance and air conditioner tips for customers in Pune and Mumbai.">
+<MainLayout title="AC Service Blog | Maharashtra AC Service & Repair" description="Practical AC service guides for Pune and Mumbai covering service, repair, maintenance and installation.">
 <Header /><main>
-<section class="page-hero"><div class="container"><span class="eyebrow">AC Knowledge Hub</span><h1>Practical AC tips for better cooling.</h1><p>Simple guides on maintenance, repair, installation, gas service and energy-saving habits for Pune and Mumbai customers.</p></div></section>
-<section class="section"><div class="container posts">
-{posts.map((post:any,i)=><article class="card post">
-  {post.image && <img src={post.image} alt={post.title} width="1200" height="700" loading="lazy" decoding="async" />}
-  <div class="post-body"><span>{post.category}</span><h2>{post.title}</h2><p>{post.description}</p><a href={post.slug ? "/blog/"+post.slug+"/" : "#"}>Read article <b>→</b></a></div>
-</article>)}
+<section class="page-hero"><div class="container"><span class="eyebrow">AC Knowledge Hub</span><h1>Practical AC guides for Pune &amp; Mumbai.</h1><p>Helpful, locally focused articles about AC service, repair, maintenance and installation — written to help you make a better service decision.</p></div></section>
+<section class="section"><div class="container blog-intro"><span class="eyebrow">Featured Guides</span><h2>Start with your city.</h2><p>Our blog uses one consistent article template so future guides can be added without changing the design.</p></div><div class="container posts">
+{posts.map((post:any)=><article class="card post"><img src={post.image} alt={post.imageAlt || post.title} width="1600" height="900" loading="lazy" decoding="async" /><div class="post-body"><span>{post.category}</span><h2>{post.title}</h2><p>{post.description}</p><a href={"/blog/"+post.slug+"/"}>Read article <b>→</b></a></div></article>)}
 </div></section>
 </main><Footer />
 </MainLayout>
 <style>
-.page-hero{padding:100px 0;background:radial-gradient(circle at 80% 20%,#eaf5ff,transparent 35%),linear-gradient(135deg,#f7f9fc,#fff)}.page-hero p{max-width:720px;font-size:1.05rem}.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.post{overflow:hidden;display:flex;flex-direction:column}.post img{width:100%;aspect-ratio:12/7;object-fit:cover}.post-body{padding:25px;display:flex;flex-direction:column;flex:1}.post-body>span{color:var(--orange);font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.09em}.post h2{font-size:1.38rem;margin-top:8px}.post-body p{font-size:.93rem}.post a{margin-top:auto;color:var(--orange-dark);font-weight:850}.post b{display:inline-block;transition:transform .2s ease}.post:hover b{transform:translateX(5px)}@media(max-width:850px){.posts{grid-template-columns:1fr 1fr}}@media(max-width:550px){.posts{grid-template-columns:1fr}}
+.page-hero{padding:86px 0}.page-hero p{max-width:760px;font-size:1.05rem}.blog-intro{margin-bottom:30px}.blog-intro p{max-width:760px}.posts{display:grid;grid-template-columns:1fr 1fr;gap:26px}.post{overflow:hidden;display:flex;flex-direction:column}.post img{width:100%;aspect-ratio:16/9;object-fit:cover}.post-body{padding:28px;display:flex;flex-direction:column;flex:1}.post-body>span{color:var(--orange);font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.1em}.post h2{font-size:1.55rem;margin-top:9px}.post-body p{font-size:.92rem}.post a{margin-top:auto;color:var(--orange-dark);font-weight:850}.post b{display:inline-block;transition:transform .2s ease}.post:hover b{transform:translateX(5px)}@media(max-width:650px){.posts{grid-template-columns:1fr}}
 </style>
