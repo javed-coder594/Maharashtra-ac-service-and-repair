@@ -1,13 +1,15 @@
 ---
-title: "Ac service in pune"
+title: "AC Gas Filling in Pune: When Does Your AC Actually Need Refrigerant?"
+metaTitle: "AC Gas Filling in Pune | When Does Your AC Need Refrigerant?"
+metaDescription: "Learn when AC gas filling may be required, why weak cooling needs proper diagnosis and what to ask a technician before refrigerant service."
 description: "Understand when AC gas or refrigerant service may be required, why weak cooling needs diagnosis and what to ask a technician."
 date: "2026-10-05"
 author: "Maharashtra AC Service & Repair"
 category: "AC Gas Service"
 slug: "ac-gas-filling-guide"
 image: "/images/ac-gas-filling.svg"
+imageAlt: "AC gas filling and refrigerant service guide"
 ---
-
 “Gas filling” is a common phrase used when an air conditioner is not cooling properly, but weak cooling does not automatically mean that refrigerant needs to be added. An AC is a sealed system, so a low refrigerant level can indicate a leak or another technical issue. Proper diagnosis should come before any refrigerant-related work.
 
 ![AC gas filling and cooling performance guide](/images/ac-gas-filling.svg)
