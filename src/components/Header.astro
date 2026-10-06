@@ -8,7 +8,7 @@ const servicesActive = currentPath === "/services" || currentPath.startsWith("/s
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home"><img src="/images/maharashtra-ac-logo.svg" alt="Maharashtra AC Service & Repair" width="240" height="75" /></a>
+    <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home"><img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto,q_auto/1000829721" alt="Maharashtra AC Service & Repair" width="240" height="75" fetchpriority="high" /></a>
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a class:list={{active:currentPath === "/"}} href="/">Home</a><a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a>
       <a class:list={{active:servicesActive}} href="/services/">Services</a><a class:list={{active:currentPath === "/service-areas" || currentPath.startsWith("/service-areas/")}} href="/service-areas/">Service Areas</a>
