@@ -1,48 +1,38 @@
 ---
 const navItems = [
-  { label:"Home", href:"/" }, { label:"About", href:"/about/" },
+  { label:"Home", href:"/" }, { label:"About", href:"/about/" }, { label:"Services", href:"/services/" },
   { label:"Service Areas", href:"/service-areas/" }, { label:"Blog", href:"/blog/" }, { label:"Contact", href:"/contact/" },
-];
-const serviceItems = [
-  ["AC Service","#ac-service"],["AC Repair","#ac-repair"],["AC Installation","#ac-installation"],["AC Uninstallation","#ac-uninstallation"],
-  ["AC Gas Filling","#ac-gas-filling"],["Gas Leakage Repair","#ac-gas-leakage"],["AC Maintenance","#ac-maintenance"],["Split AC Service","#split-ac-service"],
-  ["Window AC Service","#window-ac-service"],["Cassette AC Service","#cassette-ac-service"],["AC Not Cooling","#ac-not-cooling"],["AC Relocation","#ac-relocation"]
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const servicesActive = currentPath === "/services" || currentPath.startsWith("/services/");
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home">
-      <img src="https://res.cloudinary.com/mnqvmnca/image/upload/f_auto,q_auto/9cbcc38f-3e63-498a-895a-f8f9dede4341_1" alt="Maharashtra AC Service & Repair" width="110" height="100" />
-    </a>
+    <a class="brand" href="/" aria-label="Maharashtra AC Service & Repair home"><img src="/images/maharashtra-ac-logo.svg" alt="Maharashtra AC Service & Repair" width="240" height="75" /></a>
     <nav class="desktop-nav" aria-label="Primary navigation">
-      <a class:list={{active:currentPath === "/"}} href="/">Home</a>
-      <a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a>
-      <a class:list={{active:servicesActive}} href="/services/">Services</a>
-      <a class:list={{active:currentPath === "/service-areas" || currentPath.startsWith("/service-areas/")}} href="/service-areas/">Service Areas</a>
-      <a class:list={{active:currentPath === "/blog" || currentPath.startsWith("/blog/")}} href="/blog/">Blog</a>
-      <a class:list={{active:currentPath === "/contact" || currentPath.startsWith("/contact/")}} href="/contact/">Contact</a>
+      <a class:list={{active:currentPath === "/"}} href="/">Home</a><a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a>
+      <a class:list={{active:servicesActive}} href="/services/">Services</a><a class:list={{active:currentPath === "/service-areas" || currentPath.startsWith("/service-areas/")}} href="/service-areas/">Service Areas</a>
+      <a class:list={{active:currentPath === "/blog" || currentPath.startsWith("/blog/")}} href="/blog/">Blog</a><a class:list={{active:currentPath === "/contact" || currentPath.startsWith("/contact/")}} href="/contact/">Contact</a>
     </nav>
-    <a class="header-call" href="tel:+917378351743"><span>Call</span> 73783 51743 <b>↗</b></a>
+    <a class="header-call" href="tel:+917378351743" aria-label="Call Maharashtra AC Service & Repair">Call Now <b>↗</b></a>
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
   </div>
   <div class="mobile-nav" data-mobile-nav><div class="container mobile-nav-inner">
-    <a class:list={{active:currentPath === "/"}} href="/">Home</a><a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a>
-    <details class="mobile-services"><summary>Services</summary>{serviceItems.map(([label,href])=><a href={"/services/"+href}>{label}</a>)}</details>
+    <a class:list={{active:currentPath === "/"}} href="/">Home</a><a class:list={{active:currentPath === "/about" || currentPath.startsWith("/about/")}} href="/about/">About</a><a class:list={{active:servicesActive}} href="/services/">Services</a>
     <a class:list={{active:currentPath === "/service-areas" || currentPath.startsWith("/service-areas/")}} href="/service-areas/">Service Areas</a><a class:list={{active:currentPath === "/blog" || currentPath.startsWith("/blog/")}} href="/blog/">Blog</a><a class:list={{active:currentPath === "/contact" || currentPath.startsWith("/contact/")}} href="/contact/">Contact</a>
-    <a class="mobile-call" href="tel:+917378351743">Call 73783 51743</a>
+    <a class="mobile-call" href="tel:+917378351743" aria-label="Call Maharashtra AC Service & Repair">Call Now</a>
   </div></div>
 </header>
 <script>
 const initMenu=()=>{const button=document.querySelector(".menu-toggle");const menu=document.querySelector("[data-mobile-nav]");if(!button||!menu||button.dataset.ready)return;button.dataset.ready="true";button.addEventListener("click",()=>{const open=menu.classList.toggle("is-open");button.setAttribute("aria-expanded",String(open));button.setAttribute("aria-label",open?"Close navigation":"Open navigation");});menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>menu.classList.remove("is-open")));};
-document.addEventListener("astro:page-load",initMenu); initMenu();
+document.addEventListener("astro:page-load",initMenu);initMenu();
 </script>
 <style>
-.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid #dce6ef;backdrop-filter:blur(16px);box-shadow:0 6px 24px rgba(30,70,110,.07)}
-.header-inner{min-height:88px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;margin-right:auto;margin-left:-8px;line-height:0;width:220px;height:96px}.brand img{display:block;width:110px;height:96px;max-height:96px;object-fit:contain;object-position:center;transition:transform .3s ease,filter .3s ease}.brand:hover img{transform:scale(1.02);filter:drop-shadow(0 7px 12px rgba(22,119,200,.12))}
-.desktop-nav{display:flex;align-items:center;gap:3px}.desktop-nav>a,.nav-dropdown-trigger{position:relative;padding:10px 12px;border-radius:10px;font-size:.88rem;font-weight:800;color:#42536a;transition:color .2s ease,background .2s ease,transform .2s ease}.desktop-nav>a:after,.nav-dropdown-trigger:after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:3px;background:var(--orange);transform:scaleX(0);transition:transform .2s ease}.desktop-nav>a:hover,.nav-dropdown-trigger:hover,.nav-dropdown.active .nav-dropdown-trigger{color:var(--navy);background:#eaf5ff}.desktop-nav>a.active:after,.nav-dropdown.active .nav-dropdown-trigger:after{transform:scaleX(1)}
-.header-call,.mobile-call{padding:11px 17px;border-radius:999px;background:var(--orange);color:#fff;font-weight:850;font-size:.84rem;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease,background .2s ease}.header-call:hover,.mobile-call:hover{transform:translateY(-2px);background:var(--orange-dark);box-shadow:0 10px 25px rgba(244,122,0,.25)}.header-call span{opacity:.8}.header-call b{margin-left:4px}
-.menu-toggle{display:none;border:1px solid #cbd9e6;background:#f4f8fc;font-size:1.35rem;color:var(--navy);border-radius:10px;cursor:pointer;padding:6px 10px}.mobile-nav{display:none;border-top:1px solid #e1e9f0;background:#fff}.mobile-nav-inner{padding:10px 18px 18px;display:grid;gap:3px}.mobile-nav a,@media(max-width:1100px){.brand{width:220px}.brand img{width:105px}.desktop-nav{gap:1px}.desktop-nav>a,.nav-dropdown-trigger{padding-inline:8px}}
-@media(max-width:980px){.header-inner{min-height:82px}.brand{width:180px;height:76px;margin-left:-6px}.brand img{width:86px;height:76px.desktop-nav{display:none}.menu-toggle{display:block}.header-call{display:none}}
+.site-header{position:sticky;top:0;z-index:50;width:100%;background:rgba(255,255,255,.97);border-bottom:1px solid #dce6ef;backdrop-filter:blur(16px);box-shadow:0 6px 24px rgba(30,70,110,.07)}
+.header-inner{min-height:88px;display:flex;align-items:center;gap:24px;min-width:0}.brand{display:flex;align-items:center;margin-right:auto;line-height:0;width:220px;height:76px;flex:0 0 220px}.brand img{display:block;width:220px;height:69px;object-fit:contain;object-position:left center}.desktop-nav{display:flex;align-items:center;gap:2px;min-width:0}.desktop-nav>a{position:relative;padding:10px 10px;border-radius:10px;font-size:.84rem;font-weight:800;color:#42536a;white-space:nowrap}.desktop-nav>a:hover,.desktop-nav>a.active{color:var(--navy);background:#eaf5ff}.desktop-nav>a.active:after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;border-radius:3px;background:var(--orange)}
+.header-call,.mobile-call{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;border-radius:999px;background:var(--orange);color:#fff;font-weight:850;font-size:.84rem;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease}.header-call:hover,.mobile-call:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(244,122,0,.25)}.menu-toggle{display:none;border:1px solid #cbd9e6;background:#f4f8fc;font-size:1.35rem;color:var(--navy);border-radius:10px;cursor:pointer;padding:6px 10px}
+.mobile-nav{display:none;border-top:1px solid #e1e9f0;background:#fff}.mobile-nav-inner{padding:10px 14px 18px;display:grid;gap:3px}.mobile-nav a{padding:12px 0;font-weight:750;color:var(--text)}.mobile-nav a.active{color:var(--orange)}.mobile-nav .mobile-call{text-align:center;color:#fff;margin-top:8px}.mobile-nav.is-open{display:block}
+@media(max-width:1100px){.header-inner{gap:12px}.brand{width:190px;flex-basis:190px}.brand img{width:190px}.desktop-nav>a{padding-inline:7px;font-size:.8rem}.header-call{padding-inline:13px}}
+@media(max-width:980px){.header-inner{min-height:76px}.brand{width:175px;flex-basis:175px;height:64px}.brand img{width:175px;height:60px}.desktop-nav{display:none}.menu-toggle{display:block;margin-left:auto}.header-call{display:none}}
+@media(max-width:560px){.header-inner{min-height:70px}.brand{width:155px;flex-basis:155px;height:56px}.brand img{width:155px;height:52px}.menu-toggle{font-size:1.2rem;padding:5px 9px}}
 </style>
