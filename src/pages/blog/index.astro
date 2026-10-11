@@ -4,7 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 const posts = Object.values(import.meta.glob("../../content/blog/*.md", { eager:true, import:"frontmatter" }));
 ---
-<MainLayout title="AC Service Blog | Maharashtra AC Service & Repair" description="Practical AC service guides for Pune and Mumbai covering service, repair, maintenance and installation.">
+<MainLayout title="AC Repair & Maintenance Guides | Maharashtra AC Service" description="Read practical AC troubleshooting, servicing, repair, installation and maintenance guides for homeowners in Pune and Mumbai.">
 <Header /><main>
 <section class="page-hero"><div class="container"><span class="eyebrow">AC Knowledge Hub</span><h1>Practical AC guides for Pune &amp; Mumbai.</h1><p>Helpful, locally focused articles about AC service, repair, maintenance and installation — written to help you make a better service decision.</p></div></section>
 <section class="section"><div class="container blog-intro"><span class="eyebrow">Featured Guides</span><h2>Start with your city.</h2><p>Our blog uses one consistent article template so future guides can be added without changing the design.</p></div><div class="container posts">
