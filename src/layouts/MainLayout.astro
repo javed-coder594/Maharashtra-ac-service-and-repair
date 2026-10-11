@@ -4,7 +4,7 @@ import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 interface Props { title:string; description?:string; canonical?:string; image?:string; }
 const { title, description="Professional AC service and repair across Pune and Mumbai.", canonical, image="/og-default.svg" } = Astro.props;
-const siteUrl = (Astro.site?.toString() ?? "https://maharashtraacservice.com").replace(/\\/$/, "");
+const siteUrl = (Astro.site?.toString() ?? "https://maharashtraacservice.com").replace(/\/$/, "");
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const structuredData = {
   "@context": "https://schema.org",
@@ -33,7 +33,8 @@ const absoluteImage=new URL(image, Astro.site??Astro.url).href;
 <meta name="theme-color" content="#f7fafc" />
 <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonicalUrl} /><meta property="og:image" content={absoluteImage} />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} />
-<title>{title}</title><Font cssVariable="--font-manrope" preload /><ClientRouter fallback="animate" />\n<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<title>{title}</title><Font cssVariable="--font-manrope" preload /><ClientRouter fallback="animate" />
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 </head>
 <body>
 <slot />
