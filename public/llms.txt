@@ -1,0 +1,28 @@
+# Maharashtra AC Service & Repair
+
+> Maharashtra AC Service & Repair provides air conditioner repair, servicing, installation, and maintenance information for customers in Pune and Mumbai, Maharashtra, India.
+
+Use the linked pages as the primary sources for the business's services, service areas, contact details, and AC care guidance. The website's public content is primarily in English. Service availability and any estimates should be confirmed directly with the business.
+
+## Main pages
+
+- [Home](https://maharashtraacservice.com/): Overview of AC service and repair support in Pune and Mumbai.
+- [About](https://maharashtraacservice.com/about/): Background and information about the service business.
+- [Services](https://maharashtraacservice.com/services/): AC repair, servicing, installation, and maintenance service information.
+- [Contact](https://maharashtraacservice.com/contact/): Contact details and service enquiries.
+
+## Service areas
+
+- [Service Areas](https://maharashtraacservice.com/service-areas/): Overview of supported service locations.
+- [AC Service in Pune](https://maharashtraacservice.com/service-areas/pune/): Local AC service information for Pune, Maharashtra.
+- [AC Service in Mumbai](https://maharashtraacservice.com/service-areas/mumbai/): Local AC service information for Mumbai, Maharashtra.
+
+## Guides and articles
+
+- [AC Repair and Maintenance Blog](https://maharashtraacservice.com/blog/): Practical AC troubleshooting, maintenance, and repair guides.
+- [Why Is Your AC Not Cooling? 10 Common Causes](https://maharashtraacservice.com/blog/ac-not-cooling-common-causes/): Common reasons an AC may not cool properly and safe initial checks.
+
+## Discovery files
+
+- [XML Sitemap](https://maharashtraacservice.com/sitemap.xml): URL list for search engine discovery.
+- [Robots.txt](https://maharashtraacservice.com/robots.txt): Published crawler directives and sitemap location.
