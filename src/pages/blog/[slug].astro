@@ -27,7 +27,7 @@ const meta = post.frontmatter;
 .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-size:.78rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
 .eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
 .featured-figure{margin:0 0 34px}
-.featured-figure :global(.featured-image){display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:20px;border:1px solid #cad9e5;box-shadow:0 18px 45px rgba(23,59,99,.12)}
+.featured-figure :global(.featured-image){display:block;width:100%;max-width:760px;height:auto;max-height:428px;aspect-ratio:16/9;object-fit:cover;margin-inline:auto;border-radius:18px;border:1px solid #cad9e5;box-shadow:0 14px 34px rgba(23,59,99,.10)}
 /* Consistent, responsive table design for every blog article */
 .post-content :global(table){display:block;width:100%;max-width:100%;overflow-x:auto;border-collapse:separate;border-spacing:0;margin:26px 0 32px;border:1px solid #dce6ee;border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(23,59,99,.07);font-size:.94rem;line-height:1.6;overscroll-behavior-x:contain}
 .post-content :global(thead){background:#0b344d;color:#fff}
