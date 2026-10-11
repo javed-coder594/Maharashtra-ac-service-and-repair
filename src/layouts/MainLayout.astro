@@ -29,7 +29,7 @@ const absoluteImage=new URL(image, Astro.site??Astro.url).href;
 <html lang="en-IN">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
-<meta name="description" content={description} /><link rel="canonical" href={canonicalUrl} />
+<meta name="description" content={description} /><link rel="canonical" href={canonicalUrl} /><link rel="describedby" href="/llms.txt" type="text/markdown" />
 <meta name="theme-color" content="#f7fafc" />
 <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonicalUrl} /><meta property="og:image" content={absoluteImage} />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} />
