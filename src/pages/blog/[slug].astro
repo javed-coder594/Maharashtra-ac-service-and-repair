@@ -17,9 +17,14 @@ const meta = post.frontmatter;
     <h1>{meta.title}</h1>
     <p class="post-meta">Published {meta.date} · {meta.author} · {meta.readTime}</p>
   </header>
-  {meta.image && <img class="featured-image" src={meta.image} alt={meta.imageAlt || meta.title} width="1600" height="900" fetchpriority="high" />}
+  {meta.image && <figure class="featured-figure">
+    <img class="featured-image" src={meta.image} alt={meta.imageAlt || meta.title} title={meta.imageDescription || meta.imageAlt || meta.title} width="1600" height="900" fetchpriority="high" decoding="async" />
+    {meta.imageCaption && <figcaption class="image-caption">{meta.imageCaption}</figcaption>}
+    {meta.imageDescription && <p class="image-description">{meta.imageDescription}</p>}
+  </figure>}
   <div class="post-content"><Content /></div>
 </BlogLayout>
 <style>
 .article-head :global(h1){margin-top:12px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-size:.78rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:2px;background:currentColor}
+.featured-figure{margin:0 0 34px}.featured-figure :global(.featured-image){display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:20px;border:1px solid #cad9e5;box-shadow:0 18px 45px rgba(23,59,99,.12)}.image-caption{margin-top:10px;text-align:center;color:var(--muted);font-size:.88rem}.image-description{margin:6px auto 0;max-width:760px;text-align:center;color:var(--muted);font-size:.84rem}
 </style>
