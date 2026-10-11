@@ -1,7 +1,7 @@
 import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
-  site: "https://maharashtra-ac-service-and-repair-two.vercel.app",
+  site: "https://maharashtraacservice.com",
   trailingSlash: "always",
   fonts: [
     {
