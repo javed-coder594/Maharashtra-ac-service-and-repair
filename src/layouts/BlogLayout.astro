@@ -25,7 +25,7 @@ const { title, description } = Astro.props;
 .article-shell :global(.eyebrow){padding:7px 11px;border-radius:999px;background:#fff3e9;color:#a94f16;letter-spacing:.075em}
 .article-shell :global(.eyebrow:before){display:none}
 .article-shell :global(.post-meta){display:flex;flex-wrap:wrap;gap:6px;color:#627488;font-size:.84rem;border-bottom:1px solid #e6edf2;padding-bottom:24px;margin-bottom:30px}
-.article-shell :global(.featured-image){width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:20px;margin:0 0 34px;border:1px solid #cad9e5;box-shadow:0 18px 45px rgba(23,59,99,.12)}
+.article-shell :global(.featured-image){display:block;width:100%;max-width:760px;height:auto;max-height:428px;aspect-ratio:16/9;object-fit:cover;margin:0 auto 34px;border-radius:18px;border:1px solid #cad9e5;box-shadow:0 14px 34px rgba(23,59,99,.10)}
 .article-shell :global(.post-content){font-size:1.04rem;line-height:1.82;color:#34475a;max-width:790px;margin-inline:auto}
 .article-shell :global(.post-content > p:first-child){font-size:1.12rem;line-height:1.85;color:#243d52}
 .article-shell :global(.post-content h2){position:relative;font-size:clamp(1.55rem,3vw,1.95rem);line-height:1.28;letter-spacing:-.025em;color:#0b344d;margin-top:52px;margin-bottom:18px;padding:3px 0 4px 16px;border-left:4px solid #e88742;scroll-margin-top:100px}
