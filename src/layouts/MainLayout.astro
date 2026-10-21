@@ -31,6 +31,14 @@ const absoluteImage=new URL(image, Astro.site??Astro.url).href;
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
 <meta name="description" content={description} /><link rel="canonical" href={canonicalUrl} /><link rel="describedby" href="/llms.txt" type="text/markdown" />
 <meta name="theme-color" content="#f7fafc" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT54F41KQB"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WT54F41KQB');
+</script>
 <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/mnqvmnca/image/upload/f_png,w_192,h_192,c_fill,q_auto/download" />
 <link rel="shortcut icon" type="image/png" href="https://res.cloudinary.com/mnqvmnca/image/upload/f_png,w_192,h_192,c_fill,q_auto/download" />
 <link rel="apple-touch-icon" sizes="192x192" href="https://res.cloudinary.com/mnqvmnca/image/upload/f_png,w_192,h_192,c_fill,q_auto/download" />
