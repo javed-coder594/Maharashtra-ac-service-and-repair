@@ -6,7 +6,7 @@ const posts = Object.values(import.meta.glob("../../content/blog/*.md", { eager:
 ---
 <MainLayout title="AC Repair & Maintenance Guides | Maharashtra AC Service" description="Read practical AC troubleshooting, servicing, repair, installation and maintenance guides for homeowners in Pune and Mumbai.">
 <Header /><main>
-<section class="page-hero"><div class="container"><span class="eyebrow">AC Knowledge Hub</span><h1>Practical AC guides for Pune &amp; Mumbai.</h1><p>Helpful, locally focused articles about AC service, repair, maintenance and installation — written to help you make a better service decision.</p></div></section>
+<section class="page-hero"><div class="container"><span class="eyebrow">AC Knowledge Hub</span><h1>Practical AC guides for Pune &amp; Mumbai.</h1><p>Helpful, locally focused articles about AC service, repair, maintenance and installation - written to help you make a better service decision.</p></div></section>
 <section class="section"><div class="container blog-intro"><span class="eyebrow">Featured Guides</span><h2>Start with your city.</h2><p>Our blog uses one consistent article template so future guides can be added without changing the design.</p></div><div class="container posts">
 {posts.map((post:any)=><article class="card post"><img src={post.image} alt={post.imageAlt || post.title} width="1600" height="900" loading="lazy" decoding="async" /><div class="post-body"><span>{post.category}</span><h2>{post.title}</h2><p>{post.description}</p><a href={"/blog/"+post.slug+"/"}>Read article <b>→</b></a></div></article>)}
 </div></section>
