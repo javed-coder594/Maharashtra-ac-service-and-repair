@@ -52,7 +52,7 @@ import CTA from "../components/CTA.astro";
 <style>
 .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 15%,#c9f5f5 0,transparent 35%),linear-gradient(135deg,#f2fbff 0%,#e8f6ff 52%,#dff4f4 100%);color:#092e4b;min-height:clamp(600px,calc(100svh - 88px),800px);display:flex;align-items:center}
 .hero-content{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;padding-top:64px;padding-bottom:64px}
-.hero-copy{position:relative;z-index:2}.hero .eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;color:#0c6b88;font-size:.82rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.hero .eyebrow:before{content:"";width:28px;height:3px;border-radius:9px;background:#20b6b2}
+.hero-copy{position:relative;z-index:2}.hero .eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;color:#0c6b88;font-size:.82rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.hero .eyebrow:before{content:none!important;display:none!important}
 .hero h1{max-width:700px;margin:0;color:#0a2e4a;font-size:clamp(2.7rem,5.2vw,5rem);font-weight:900;letter-spacing:-.045em;line-height:1.05;text-wrap:balance}.hero h1 span{color:#1689a6}.hero-description{max-width:600px;margin:24px 0 30px;color:#37566c;font-size:clamp(1rem,1.7vw,1.2rem);font-weight:600;line-height:1.8}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px}.hero .btn{display:inline-flex;min-height:54px;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border:1px solid transparent;border-radius:999px;font-weight:850;text-decoration:none;transition:transform .2s ease}.hero .btn:hover{transform:translateY(-2px)}.hero .btn-primary{background:#087a9c;color:#fff;box-shadow:0 10px 28px rgba(8,122,156,.25)}.hero .btn-secondary{border:1px solid #b7d4e3;background:rgba(255,255,255,.72);color:#164661}.hero-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;color:#327087;font-size:.83rem;font-weight:750}
 .hero-visual{position:relative;min-height:480px;display:flex;align-items:center;justify-content:center}.cool-glow{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,#c5f3f3 0%,rgba(160,225,240,.48) 48%,transparent 72%);filter:blur(2px)}.floating-spark{position:absolute;color:#42b9c3;font-size:2rem}.spark-one{top:35px;right:15%}.spark-two{bottom:42%;left:5%}
@@ -65,7 +65,7 @@ import CTA from "../components/CTA.astro";
 @media(prefers-reduced-motion:reduce){.hero .btn,.air-flow span{transition:none;animation:none}}
 /* Hero visual revised to match the site's navy, blue and orange palette */
 .hero{background:linear-gradient(135deg,#f7fafc 0%,#eaf2f8 55%,#dceaf5 100%);color:var(--navy-dark)}
-.hero .eyebrow{color:var(--orange)}.hero .eyebrow:before{background:var(--orange)}
+.hero .eyebrow{color:var(--orange)}.hero .eyebrow:before{content:none!important;display:none!important}
 .hero h1{color:var(--navy-dark)}.hero h1 span{color:var(--blue)}
 .hero-description{color:var(--muted)}
 .hero .btn-primary{background:var(--orange);box-shadow:0 10px 28px rgba(244,122,0,.24)}.hero .btn-primary:hover{background:var(--orange-dark)}
@@ -113,7 +113,7 @@ import CTA from "../components/CTA.astro";
 /* Dark hero background with high-contrast light text, side-by-side layout */
 .hero{background:linear-gradient(120deg,#102e50 0%,#173b63 58%,#205b83 100%)!important;color:#f8fbff!important}
 .hero-content{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important;gap:42px!important;padding-top:58px!important;padding-bottom:58px!important}
-.hero-copy{max-width:100%}.hero .eyebrow{color:#ffb34d!important}.hero .eyebrow:before{background:#ffb34d!important}
+.hero-copy{max-width:100%}.hero .eyebrow{color:#ffb34d!important}.hero .eyebrow:before{content:none!important;display:none!important}
 .hero h1{color:#f8fbff!important;text-shadow:none!important}.hero h1 span{color:#73c6ff!important}.hero-description{color:#dceaf7!important}.hero-trust{color:#c9e3f7!important}
 .hero .btn-primary{background:#f47a00!important;color:#fff!important}.hero .btn-secondary{background:#fff!important;color:#173b63!important;border-color:#fff!important}
 .hero-visual{min-width:0}.cool-glow{background:radial-gradient(circle,#28628d 0%,rgba(35,133,200,.23) 58%,transparent 75%)!important}
