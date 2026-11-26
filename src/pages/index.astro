@@ -104,4 +104,10 @@ import CTA from "../components/CTA.astro";
 @media(max-width:850px){.hero-visual{min-height:520px;padding-top:25px}.hero-service-list{max-width:560px;margin-top:0}.hero-copy{text-align:center}.hero h1,.hero-description{margin-inline:auto}}
 @media(max-width:560px){.hero-visual{min-height:495px;padding-top:10px}.cool-glow{width:340px;height:340px}.ac-scene{height:320px;padding-top:50px}.ac-unit{height:130px}.ac-top{padding:20px 22px}.ac-brand{font-size:.65rem}.air-flow{top:180px;width:85%;gap:15px}.air-flow span{height:110px}.hero-service-list{padding:18px 15px;border-radius:18px}.service-pills{gap:7px}.service-pills a{font-size:.75rem;padding:9px 11px}}
 @media(prefers-reduced-motion:reduce){.air-flow span{animation:none}}
+/* Final hero contrast and horizontal alignment */
+.hero{background:linear-gradient(135deg,#f7fafc 0%,#eaf2f8 55%,#dceaf5 100%)!important;min-height:unset!important;color:#173b63!important}
+.hero-content{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important;gap:48px!important;padding-top:58px!important;padding-bottom:58px!important}
+.hero-copy{max-width:100%}.hero h1{color:#173b63!important;text-shadow:none!important}.hero h1 span{color:#2385c8!important}.hero-description{color:#425a70!important}.hero-trust{color:#173b63!important}
+.hero-visual{min-width:0}
+@media(max-width:850px){.hero-content{grid-template-columns:1fr!important;gap:22px!important}.hero-copy{text-align:center}.hero-visual{width:min(100%,600px);margin:auto}}
 </style>
