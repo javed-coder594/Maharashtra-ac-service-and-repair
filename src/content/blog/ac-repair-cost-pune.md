@@ -37,7 +37,7 @@ The AC repair cost in Pune can range from a few hundred rupees for some basic tr
 | PCB repair | Circuit board problem | ₹1,000–₹2,000 |
 | Capacitor replacement | Faulty capacitor | ₹500–₹900 |
 
-<text>These are budget-oriented estimates provided for general guidance, not verified or guaranteed current tariffs. Actual charges may vary depending on AC type, refrigerant, parts, installation accessibility and technician inspection. Ask for an estimate before approving work.</text>
+These are budget-oriented estimates provided for general guidance, not verified or guaranteed current tariffs. Actual charges may vary depending on AC type, refrigerant, parts, installation accessibility and technician inspection. Ask for an estimate before approving work.
 
 Not every AC problem requires expensive parts. Sometimes, cleaning a blocked drain pipe, fixing a loose connection or correcting an airflow problem can solve the issue at a relatively low cost. However, problems involving the compressor, PCB or refrigerant leakage may require more repair work.
 
