@@ -110,4 +110,12 @@ import CTA from "../components/CTA.astro";
 .hero-copy{max-width:100%}.hero h1{color:#173b63!important;text-shadow:none!important}.hero h1 span{color:#2385c8!important}.hero-description{color:#425a70!important}.hero-trust{color:#173b63!important}
 .hero-visual{min-width:0}
 @media(max-width:850px){.hero-content{grid-template-columns:1fr!important;gap:22px!important}.hero-copy{text-align:center}.hero-visual{width:min(100%,600px);margin:auto}}
+/* Dark hero background with high-contrast light text, side-by-side layout */
+.hero{background:linear-gradient(120deg,#102e50 0%,#173b63 58%,#205b83 100%)!important;color:#f8fbff!important}
+.hero-content{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center!important;gap:42px!important;padding-top:58px!important;padding-bottom:58px!important}
+.hero-copy{max-width:100%}.hero .eyebrow{color:#ffb34d!important}.hero .eyebrow:before{background:#ffb34d!important}
+.hero h1{color:#f8fbff!important;text-shadow:none!important}.hero h1 span{color:#73c6ff!important}.hero-description{color:#dceaf7!important}.hero-trust{color:#c9e3f7!important}
+.hero .btn-primary{background:#f47a00!important;color:#fff!important}.hero .btn-secondary{background:#fff!important;color:#173b63!important;border-color:#fff!important}
+.hero-visual{min-width:0}.cool-glow{background:radial-gradient(circle,#28628d 0%,rgba(35,133,200,.23) 58%,transparent 75%)!important}
+@media(max-width:850px){.hero-content{grid-template-columns:1fr!important;gap:24px!important}.hero-copy{text-align:center}.hero-visual{width:min(100%,600px);margin:auto}}
 </style>
